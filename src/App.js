@@ -18,6 +18,7 @@ function App() {
     setList(function(prev) {
       return [...prev, items];
     });
+	  setItems("");
   }
   return (
     <div className="container">
@@ -25,15 +26,15 @@ function App() {
         <h1>To-Do List</h1>
       </div>
       <div className="form">
-        <input onChange={handleInput} type="text" />
+        <input onChange={handleInput} value={items}type="text" />
         <button onClick={addList}>
           <span>Add</span>
         </button>
       </div>
       <div>
         <ul>
-          {list.map(function(items) {
-            return <li>{items}</li>;
+          {list.map(function(listItems) {
+            return <li>{listItems}</li>;
           })}
         </ul>
       </div>
